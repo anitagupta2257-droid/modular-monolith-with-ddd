@@ -8,4 +8,7 @@ ENV MSSQL_PID=Express
 ENV MSSQL_TCP_PORT=1433
 
 ADD entrypoint.sh /
+
+# Switch to non-root user
+USER mssql
 ENTRYPOINT ["/bin/bash", "/entrypoint.sh"]
